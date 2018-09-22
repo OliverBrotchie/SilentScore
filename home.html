@@ -3,25 +3,57 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-<head>
-	<title>Silent Score</title>
-	<!--Import Google Icon Font-->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<!--Defines the charset for the wesite-->
-	<meta charset="utf-8">
-	
-	<meta name="description" content="Design, write and share music" />
-	<meta name="authors" content="Oliver Brotchie" />
-	<meta name="keywords" content="tab,music,song,song writing,music writing,tab writing,gitaur,learn gitaur,bass gitaur,learn bass gitaur"/>
-	<meta name="robots" content="index, follow"/>
-</head>
+	<head>
+		<title>Silent Score</title>
+		
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<!--Defines the charset for the wesite-->
+		<meta charset="utf-8"/>
+		
+		<meta name="description" content="Design, write and share music" />
+		<meta name="authors" content="Oliver Brotchie" />
+		<meta name="keywords" content="tab,music,song,song writing,music writing,tab writing,guitar,learn guitar,bass guitar,learn bass guitar"/>
+		<meta name="robots" content="index, follow"/>
+		
+		
+	</head>
 
-<body>
-  some content 
-</body>
-<script type="text/javascript" src="js/materialize.min.js"></script>
+	<body>
+		<nav>
+			<div class="nav-wrapper">
+			  <a href="home.html" class="brand-logo center">Logo</a>
+			  <ul id="nav-mobile" class="left">
+				<li><a data-target="mobile-nav" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a></li>
+				<li><a id="account">login/sign up</a></li>
+			  </ul>
+			</div>
+		</nav>
+		
+		<ul class="sidenav" id="mobile-nav">
+			<li>
+				<a href="#!">Link</a>
+			</li>
+		</ul>
+		
+	</body>
+
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script>
+	
+		var elem = document.querySelector('.sidenav');
+		var instance = M.Sidenav.init(elem, {
+			onOpenStart: function () {
+					
+			},
+			onCloseEnd: function () {
+					
+			}
+		});
+		
+	</script>
 </html>
