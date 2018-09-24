@@ -29,31 +29,18 @@
 			  <a href="home.html" class="brand-logo center">Logo</a>
 			  <ul id="nav-mobile" class="left">
 				<li><a data-target="mobile-nav" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a></li>
-				<li><a id="account">login/sign up</a></li>
+				<li><a class="hide-on-small-only" id="login" onclick="login()">login/sign up</a></li>
 			  </ul>
 			</div>
 		</nav>
 		
-		<ul class="sidenav" id="mobile-nav">
-			<li>
-				<a href="#!">Link</a>
-			</li>
+		<ul class="sidenav center" id="mobile-nav">
+			<li><a class="hide-on-med-and-up" id="loginMobile" onclick="login()">login/sign up</a></li>
+			<li><a>Im a normal link</a></li>
 		</ul>
 		
 	</body>
 
 	<script type="text/javascript" src="js/materialize.min.js"></script>
-	<script>
-	
-		var elem = document.querySelector('.sidenav');
-		var instance = M.Sidenav.init(elem, {
-			onOpenStart: function () {
-					
-			},
-			onCloseEnd: function () {
-					
-			}
-		});
-		
-	</script>
+	<script type="text/javascript" src="js/javascript.js"></script>
 </html>
