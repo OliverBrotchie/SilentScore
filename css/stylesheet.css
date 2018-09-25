@@ -1,0 +1,21 @@
+.dark-primary-color {
+    background: #FFA000;
+}
+
+.default-primary-color {
+    background: #FFC107;
+}
+
+.light-primary-color {
+    background: #FFECB3;
+}
+
+.accent-color {
+    background: #FFEB3B;
+}
+
+.logo {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-size: 7rem;
+}
