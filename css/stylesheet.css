@@ -1,21 +1,29 @@
-.dark-primary-color {
-    background: #FFA000;
-}
-
-.default-primary-color {
-    background: #FFC107;
-}
-
-.light-primary-color {
-    background: #FFECB3;
-}
-
-.accent-color {
-    background: #FFEB3B;
-}
-
 .logo {
     margin-top: 60px;
     margin-bottom: 20px;
     font-size: 7rem;
+    color: #846C63 !important;
+}
+
+.title {
+    color: #846C63 !important;
+}
+
+body {
+    background: #F6F4F1;
+}
+
+
+nav a {
+    color: rgba(0, 0, 0, 0.87) !important;
+    font-weight: 500;
+    height: 70px;
+}
+
+nav .sidenav-trigger {
+    height: 70px !important;
+}
+
+nav {
+    height:70px;
 }
