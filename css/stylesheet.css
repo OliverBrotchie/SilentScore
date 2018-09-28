@@ -2,11 +2,11 @@
     margin-top: 60px;
     margin-bottom: 20px;
     font-size: 7rem;
-    color: #846C63 !important;
+
 }
 
 .title {
-    color: #846C63 !important;
+
 }
 
 body {
@@ -15,7 +15,7 @@ body {
 
 
 nav a {
-    color: rgba(0, 0, 0, 0.87) !important;
+
     font-weight: 500;
     height: 70px;
 }

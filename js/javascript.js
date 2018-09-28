@@ -20,36 +20,90 @@ function login(){
 	}
 }
 
+var canvas = document.getElementById("content");
+var ctx = canvas.getContext("2d");
+var canvasOffset = getOffset(canvas);
+var offsetX = canvasOffset.x;
+var offsetY = canvasOffset.y;
+var startX;
+var startY;
+var prevX;
+var prevY;
+var prevStartX;
+var prevStartY;
+var isDown = false;
 
-VF = Vex.Flow;
+function drawLine(x, y) {
+    ctx.beginPath();
+    ctx.moveTo(startX, startY);
+    ctx.lineTo(x, y);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.restore();
+}
 
-// Create an SVG renderer and attach it to the DIV element named "boo".
-var div = document.getElementById("boo")
-var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
+canvas.onmousedown = function (e)  {
+    e.preventDefault();
+    e.stopPropagation();
+	
+    startX = parseInt(e.clientX - offsetX);
+    startY = parseInt(e.clientY - offsetY);
+    isDown = true;
+	
+	ctx.fillStyle = "#ff0000";
+	ctx.fillRect(prevStartX,prevStartY,prevX-prevStartX,prevY-prevStartY);
+	
+}
 
-// Configure the rendering context.
-renderer.resize(500, 200);
-var context = renderer.getContext();
-context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
+canvas.onmousemove = function (e)  {
+    if (!isDown) {
+        return;
+    }
+    e.preventDefault();
+    e.stopPropagation();
+	
+	
+    curX = parseInt(e.clientX - offsetX);
+    curY = parseInt(e.clientY - offsetY);
+	
+	ctx.fillStyle = "#ff0000";
+	ctx.fillRect(startX,startY,prevX-startX,prevY-startY);
+	
+	
+    ctx.fillStyle = "#FFF";
+	ctx.fillRect(startX,startY,curX-startX,curY-startY);
+	
+	
+	prevX = curX;
+	prevY = curY;
+	
+}
+canvas.onmouseup = function (e)  {
+    mouseUp(e);
+	 isDown = false;
+}
 
-// Create a stave of width 400 at position 10, 40 on the canvas.
-var stave = new VF.Stave(10, 40, 400);
+document.getElementById("content").addEventListener ("mouseout", mouseUp(), false);
 
+function mouseUp(e){
+	if (!isDown) {
+        return;
+    }
+    e.preventDefault();
+    e.stopPropagation();
+	
+	prevStartX=startX;
+	prevStartY=startY;
+}
 
-// Connect it to the rendering context and draw!
-stave.setContext(context).draw();
+function getOffset(element) {
+    var xPosition = 0;
+    var yPosition = 0;
 
-var notes = [
-
-    new VF.StaveNote({ clef: "treble", keys: ["eb/5"], duration: "16" }).
-        addAccidental(0, new VF.Accidental("b")),
-
-    new VF.StaveNote({ clef: "treble", keys: ["d/5", "eb/4"], duration: "h" }).
-        addDot(0),
-
-    new VF.StaveNote({ clef: "treble", keys: ["c/5", "eb/5", "g#/5"], duration: "q" }).
-        addAccidental(1, new VF.Accidental("b")).
-        addAccidental(2, new VF.Accidental("#")).addDotToAll()
-];
-
-VF.Formatter.FormatAndDraw(context, stave, notes);
+    while (element) {
+        xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
+        yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+        element = element.offsetParent;
+    }
+    return { x: xPosition, y: yPosition };
+}
