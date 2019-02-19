@@ -1,29 +1,28 @@
+@import url(materialize.min.css);
 .logo {
-    margin-top: 60px;
-    margin-bottom: 20px;
-    font-size: 7rem;
-
-}
-
-.title {
-
-}
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-size: 7rem; }
 
 body {
-    background: #F6F4F1;
-}
+  background: #FFF; }
 
+.nav-wrapper {
+  background: #5B8499; }
 
-nav a {
-
-    font-weight: 500;
-    height: 70px;
-}
-
-nav .sidenav-trigger {
-    height: 70px !important;
-}
+.sidenav {
+  background-color: #19242A;
+  color: #fff; }
+  .sidenav a {
+    color: #fff !important;
+    font-size: 15px; }
 
 nav {
-    height:70px;
-}
+  height: 70px; }
+  nav a {
+    height: 70px;
+    font-weight: 500; }
+  nav .sidenav-trigger {
+    height: 70px !important; }
+
+/*# sourceMappingURL=stylesheet.css.map */

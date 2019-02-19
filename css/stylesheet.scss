@@ -1,0 +1,52 @@
+@import 'materialize.min.css';
+
+$PC: #5B8499;
+$SC: #19242A;
+
+
+
+.logo {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-size: 7rem;
+}
+
+.title {
+
+}
+
+body {
+    background: #FFF;
+}
+
+.nav-wrapper{
+	background: $PC;
+}
+
+.sidenav{
+	background-color: $SC;
+	color:#fff;
+	
+	
+	a{
+		color:#fff !important;
+		font-size: 15px;
+	}
+}
+
+
+nav{
+	
+	height: 70px;
+	
+	a {
+		height: 70px;
+		
+		font-weight: 500;
+	}
+	
+	.sidenav-trigger {
+		height: 70px !important;
+	}
+	
+}
