@@ -1,21 +1,40 @@
-@import url(materialize.min.css);
+@import url(materialize.css);
 .logo {
   margin-top: 60px;
   margin-bottom: 20px;
   font-size: 7rem; }
+
+header, main, footer {
+  padding-left: 300px; }
+  @media only screen and (max-width: 992px) {
+    header, main, footer {
+      padding-left: 0; } }
+
+.sidenav {
+  background-color: #19242A; }
+  .sidenav li {
+    padding-top: 15px; }
+  .sidenav li > a {
+    font-size: 14px;
+    color: #fff; }
+    .sidenav li > a i {
+      color: #fff !important; }
+  .sidenav i {
+    color: #fff; }
+  .sidenav .input-field {
+    margin: 20px 7px 10px 7px;
+    border-bottom: solid 2px #9e9e9e;
+    transition: color .2s; }
+    .sidenav .input-field input {
+      border-bottom-width: 0px;
+      font-size: 18px;
+      color: #fff; }
 
 body {
   background: #FFF; }
 
 .nav-wrapper {
   background: #5B8499; }
-
-.sidenav {
-  background-color: #19242A;
-  color: #fff; }
-  .sidenav a {
-    color: #fff !important;
-    font-size: 15px; }
 
 nav {
   height: 70px; }
