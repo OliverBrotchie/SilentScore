@@ -1,25 +1,29 @@
 var sidenavOpen = false;
-var PC = '#5B8499';
-var grey = '#9e9e9e';
-var SC = '#26a69a';
+var mousedown, cursorX, cursorY;
+var PC = '#5B8499', grey = '#9e9e9e', C = '#26a69a';
 
 console.log(WURFL.form_factor);
-
 main();
 
 function main(){
-
-	
-
 }
 
+function search(){
+	//stub
+}
+
+document.getElementById("search").addEventListener("keypress", function (event) {
+	var key = event.which || event.keyCode;
+	if (key === 13) {
+		search();
+	}
+});
 
 function sleep(fun,time){
 	setTimeout(function () {
 		fun();
 	}, time);
 }
-
 
 var sidenav = M.Sidenav.init(sidenav, {
 	onOpenStart: function () {
@@ -32,13 +36,13 @@ var sidenav = M.Sidenav.init(sidenav, {
 
 var searchBar = document.getElementById('search');
 
-monitorFocus(searchBar,function focus(){
+monitorFocus(searchBar,function(){
 		
 		searchBar.style.borderBottom = 'none';
 		searchBar.style.boxShadow = 'none';
 		searchBar.parentElement.style.borderBottomColor = '#26a69a';
 		
-	},function focusout(){
+	},function(){
 
 		searchBar.parentElement.style.borderBottomColor = grey;
 
