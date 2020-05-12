@@ -25,14 +25,20 @@ function sleep(fun,time){
 	}, time);
 }
 
-var sidenav = M.Sidenav.init(sidenav, {
+
+/*var sidenav = M.Sidenav.init(sidenav, {
 	onOpenStart: function () {
 		sidenavOpen = true;
 	},
 	onCloseEnd: function () {
 		sidenavOpen = false;
 	}
-});
+});*/
+
+document.body.addEventListener('load', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  });
 
 var searchBar = document.getElementById('search');
 
